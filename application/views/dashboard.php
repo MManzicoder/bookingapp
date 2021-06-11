@@ -43,6 +43,8 @@
        .userprofile {
            width: 100%;
            height: 20vh;
+           margin: 20px;
+           margin-left: 60px;
        }
        .userprofile>img{
            height: 60px;
@@ -53,7 +55,7 @@
            background: #000066;
        }
        .logout{
-          margin-top: 230px;
+          margin-top: 150px;
           padding: 0 20px;
        }
        .logout > a{
@@ -68,7 +70,7 @@
            width: 93%;
            margin: 0 auto;
            /* border: 1px groove; */
-           height: 12em;
+           height: 8em;
        }
        .popularplaces{
            width: 73%;
@@ -101,6 +103,11 @@
            background: lightgray;
            border-radius: 7px;
            position: relative;
+       }
+       .card-hotel img{
+           width: 100%;
+           height: 100%;
+           border-radius: 5px;
        }
        .hotel h5{
            font-size: 15px;
@@ -135,9 +142,9 @@
 </head>
 <body>
     <div class="container_fluid d-flex">
-        <div class="sidebar text-white bg-primary d-flex">
+    <div class="sidebar text-white bg-primary d-flex">
            <div class="userprofile">
-               <img src="" alt="profile">
+               <img src="<?=base_url();?>images/booker.jpg" alt="profile">
            </div>
            <ul class="links">
               <li class="active"><a href=""><i class="fa fa-tachometer" aria-hidden="true"></i> 
@@ -160,11 +167,11 @@ Dashboard</a></li>
           <div class="popularplaces">
              <ul class="popular">
                <li>Popular places</li>
-               <li><a href="" class="text-primary bold">See All</a></li>
+               <li><?=anchor("user/dashboard", "See All", "class='text-primary'")?></li>
              </ul>
              <div class="places">
                 <div class="card-hotel">
-                    <img src="" alt="">
+                    <img src="<?=base_url();?>images/onomo.jpg" alt="onomo">
                     <div class="hotel">
                        <h5>Onomo Hotel Kigali</h5>
                        <p><i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -172,7 +179,7 @@ Dashboard</a></li>
                     </div>
                 </div>
                 <div class="card-hotel">
-                    <img src="" alt="">
+                    <img src="<?=base_url();?>images/colline.jpg" alt="colline">
                     <div class="hotel">
                        <h5>Onomo Hotel Kigali</h5>
                        <p><i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -180,7 +187,7 @@ Dashboard</a></li>
                     </div>
                 </div>
                 <div class="card-hotel">
-                    <img src="" alt="">
+                    <img src="<?=base_url();?>images/radisson.jpg" alt="radisson">
                     <div class="hotel">
                        <h5>Onomo Hotel Kigali</h5>
                        <p><i class="fa fa-map-marker" aria-hidden="true"></i>
