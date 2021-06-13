@@ -1,3 +1,4 @@
+
 .banner{
     display: flex;
     position: relative;
@@ -67,14 +68,14 @@
     flex-direction: row;
 }
 .about .image{
-    flex: 5;
+    flex: 4;
 }
 .about .image  img{
-    width: 350px;
+    width: 450px;
     height: 210px;
 }
 .about .text{
-    flex: 4;
+    flex: 2;
     font-family: poppins;
 }
 .about .text p{

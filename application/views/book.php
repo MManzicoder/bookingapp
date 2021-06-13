@@ -1,5 +1,8 @@
 <?php include("header.php") ?>
 <style>
+body{
+    background-color: whitesmoke;
+}
     .sidebar {
         background-color: #0E7FD5;
         height: 100vh;
@@ -33,7 +36,6 @@
     .links {
         height: 50px;
     }
-
     .sidebar img {
         height: 80px;
         width: 80px;
@@ -41,7 +43,6 @@
         border-radius: 50%;
         margin-left: 30px;
     }
-
     .sidebar span {
         font-size: 14px;
         color: white;

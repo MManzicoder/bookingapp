@@ -24,7 +24,7 @@ class home extends CI_Controller{
                 return redirect('home');
             } else {
                 $this->session->set_flashdata('response', 'records failed to save');
-                return redirect('home');
+                return redirect('book');
             }
         } else {
             // echo validation_errors();
