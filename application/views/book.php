@@ -400,11 +400,7 @@
                     <p><span><i class="fas fa-clock"></i></span>your rooms will be ready for checkin between 14:00 and 23:30</p>
                     <p>24-hours front desk- Help whenever you need it</p>
                 </div>
-<<<<<<< HEAD
                 <?php echo form_submit(['value' => 'Book', 'class' => 'btn btn-primary col-lg-5']) ?>
-=======
-                <?php echo form_submit(['value' => 'Book', 'class' => 'btn m-2 btn-primary col-lg-5']) ?>
->>>>>>> 6e6f1b0b0a4460a7096eda40dbb45d4659b098ef
                 <?php echo form_close() ?>
             </div>
         </div>
