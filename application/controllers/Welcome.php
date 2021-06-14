@@ -53,7 +53,7 @@ class Welcome extends CI_Controller {
 				"password" =>$this->hash_password($this ->input -> post("password"))
 			);
 			$this -> signup ->insert_data($data);
-			redirect(base_url()."Welcome/book");
+			redirect(base_url()."Dashboard");
 		}else{
 			$this -> index();
 		}

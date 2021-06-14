@@ -75,10 +75,6 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	// 'hostname' => 'localhost',
-	// 'username' => 'root',
-	// 'password' => 'kayitare@123',
-	// 'database' => 'ci_hotel',
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => 'mysql',
