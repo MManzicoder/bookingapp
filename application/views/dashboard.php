@@ -145,8 +145,12 @@
     <div class="container_fluid d-flex">
     <div class="sidebar text-white bg-primary d-flex">
            <div class="userprofile">
+<<<<<<< HEAD
+               <img src="<?=base_url();?>images/booker.jpg" alt="profile" />
+=======
                <img src="<?=base_url();?>images/booker.jpg" alt="profile">
                <!-- <h3></h3> -->
+>>>>>>> 6e6f1b0b0a4460a7096eda40dbb45d4659b098ef
            </div>
            <ul class="links">
               <li class="active"><a href=""><i class="fa fa-tachometer" aria-hidden="true"></i> 
