@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') or exit('No direct script access allowed');
 class home extends CI_Controller{
     public function index(){
         $this->load->view('home');
@@ -20,8 +21,8 @@ class home extends CI_Controller{
             $this->load->model('bookModel');
             $data = $this->input->post();
             if ($this->bookModel->book($data)) {
-                $this->session->set_flashdata('response', 'records updated successfully');
-                return redirect('home');
+                $this->session->set_flashdata('response', 'You have succesfully booked your room');
+                return redirect('home/bookForm');
             } else {
                 $this->session->set_flashdata('response', 'records failed to save');
                 return redirect('book');

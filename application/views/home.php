@@ -5,9 +5,6 @@
         <h2 class="font-weight-bolder text-light">Make your self at home <span>in our hotel</span></h2>
     </div>
     <div class="btn">
-
-
-        <!-- <a class="effect effect-1" href="#" title="Learn More">Learn More</a> -->
         <?php echo anchor('home/signup', 'Get started', ['class' => 'sign']) ?>
     </div>
     <div class="white">
