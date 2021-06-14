@@ -75,8 +75,19 @@
        .popularplaces{
            width: 73%;
            height: 69vh;
-           margin-left: 41px;
-           /* border: 1px groove; */
+           margin: 50px 0 0 30px;
+           position: relative;
+       }
+       .back{
+           color: black;
+       }
+       .popularplaces h2{
+           margin: 0 0 20px 30px;
+           font-size: 25px;
+       }
+       .hotelview{
+           margin: 0%;
+           width: 100%;
        }
        .popular{
            width: 100%;
@@ -97,9 +108,9 @@
 
        }
        .card-hotel{
-           height: 18em;
+           height: 15em;
            margin-left: 30px;
-           width: 27%;
+           width: 40%;
            background: lightgray;
            border-radius: 7px;
            position: relative;
@@ -129,8 +140,9 @@
            margin-left: 30px;
            padding-top: 15px;
        }
-       .fav-hotel{
-
+       .fav-hotel p span:nth-of-type(2){
+           opacity: 0.5;
+           font-weight: bold;
        }
        .stars{
            color: #ffcc00;
@@ -139,17 +151,39 @@
        a{
            color: #fff;
        }
+       .desc{
+           width: 100%;
+           height: 5em;
+           border-top : 1px solid gray;
+       }
+       .desc h3{
+           font-size: 20px;
+       }
+       .book{
+           color: #fff;
+           padding: 7px 25px;
+           background: #0d6efd;
+           border-radius: 5px;
+       }
+       .book:hover{
+           opacity: 0.7;
+           /* background: #fff; */
+           color: #fff;
+       }
     </style>
 </head>
+<?php
+
+ $hId = $this->encryption->encrypt($hotel[0]["hId"]);
+?>
 <body>
     <div class="container_fluid d-flex">
     <div class="sidebar text-white bg-primary d-flex">
            <div class="userprofile">
                <img src="<?=base_url();?>images/booker.jpg" alt="profile">
-               <!-- <h3><?=?></h3> -->
            </div>
            <ul class="links">
-              <li class="active"><a href=""><i class="fa fa-tachometer" aria-hidden="true"></i> 
+              <li class="active"><a href="<?=site_url("user/dashboard")?>"><i class="fa fa-tachometer" aria-hidden="true"></i> 
 Dashboard</a></li>
               <li><a href=""><i class="fa fa-address-card" aria-hidden="true"></i>
  Orders</a></li>
@@ -165,31 +199,31 @@ Dashboard</a></li>
 
         </div>
         <div class="dash">
-          <div class="search"></div>
+        <!-- <a href="<?=site_url("book/$hId")?>"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+</a> -->
+
           <div class="popularplaces">
-             <ul class="popular">
-               <li>Popular places</li>
-               <!-- <li><?=anchor("user/hotels", "See All", "class='text-primary'")?></li> -->
-               <li><a class="text-primary" href="<?=site_url("dashboard/viewmore")?>">See All</a></li>
-             </ul>
-             <div class="places">
-                 <?php foreach($hotels as $hotel) { $hId=$this->encryption->encrypt($hotel["hId"]);?>
-                <a href="<?=site_url("view/$hId")?>" class="card-hotel">
-                    <img src='<?=base_url();?>images/<?=$hotel["hotel_image"]?>' alt="onomo">
-                    <div class="hotel">
-                       <h5><?=$hotel["name"]?></h5>
-                       <p><i class="fa fa-map-marker" aria-hidden="true"></i><?=$hotel["description"]?></p>
+            <a class="back" href="<?=site_url("user/dashboard")?>"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+</a>
+                 <?php foreach($hotel as $hotel) { ?>
+                 <div class="hotelview">
+                    <h2><?=$hotel["name"]?></h2>
+                    <div href="<?=site_url("dashboard/viewhotel")?>" class="card-hotel">
+                        <img src='<?=base_url();?>images/<?=$hotel["hotel_image"]?>' alt="onomo">
                     </div>
-                 </a>
-               <?php } ?>
-             </div>
-             <div class="favorite">
-              <h5>Favorite in Rwanda</h5>
+                <?php } ?>
+
+                 </div>
+                              <div class="favorite">
               <div class="fav-hotel">
-                 <h6>Mariot hotel</h6>
                  <p><span class="stars"><i class="fa fa-star" aria-hidden="true"></i>
  4.4 stars</span><span> - 250 reviews</span></p>
               </div>
+              <div class="desc">
+              <h3>Description</h3>
+               <p><?=$hotel["description"]?></p>
+              </div>
+            <?=anchor("book/$hId", "Book Now", "class='book'")?>
              </div>
           </div>
         </div>
