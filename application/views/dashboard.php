@@ -145,7 +145,12 @@
     <div class="container_fluid d-flex">
     <div class="sidebar text-white bg-primary d-flex">
            <div class="userprofile">
+<<<<<<< HEAD
                <img src="<?=base_url();?>images/booker.jpg" alt="profile" />
+=======
+               <img src="<?=base_url();?>images/booker.jpg" alt="profile">
+               <!-- <h3></h3> -->
+>>>>>>> 6e6f1b0b0a4460a7096eda40dbb45d4659b098ef
            </div>
            <ul class="links">
               <li class="active"><a href=""><i class="fa fa-tachometer" aria-hidden="true"></i> 
@@ -172,7 +177,7 @@ Dashboard</a></li>
                <li><a class="text-primary" href="<?=site_url("dashboard/viewmore")?>">See All</a></li>
              </ul>
              <div class="places">
-                 <?php foreach($hotels as $hotel) { $hId=$this->encryption->encrypt($hotel["hId"]);?>
+                 <?php foreach($hotels as $hotel) {$hId = $hotel["hId"]; ?>
                 <a href="<?=site_url("view/$hId")?>" class="card-hotel">
                     <img src='<?=base_url();?>images/<?=$hotel["hotel_image"]?>' alt="onomo">
                     <div class="hotel">

@@ -14,8 +14,8 @@ class Dashboard extends CI_Controller{
         $this->load->view("dashboard", $hotels);
     }
   public function viewHotel($hId){
-    $this->load->library("encryption");
-    $hId = $this->encryption->decrypt($hId);
+    // $this->load->library("encryption");
+    // $hId = $this->encryption->decrypt($hId);
     $hotel["hotel"] = $this->hotel_model->getHotel($hId);
     $this->load->view("hotel", $hotel);
 
@@ -37,6 +37,9 @@ class Dashboard extends CI_Controller{
     public function logout(){
       $this->session->sess_destroy();
       redirect("default_controller");
+    }
+    public function book(){
+      $this -> load -> view("book");
     }
 }
 
