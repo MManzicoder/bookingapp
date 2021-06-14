@@ -55,3 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['user/dashboard'] = "Dashboard";
 $route['user/hotels'] = "Dashboard/viewMore";
 $route["view/(:any)"] = "Dashboard/viewHotel/$1";
+
