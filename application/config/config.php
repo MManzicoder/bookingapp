@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/bookingapp/';  
+$config['base_url'] = 'http://localhost/bookingapp/bookingapp';  
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +36,6 @@ $config['base_url'] = 'http://localhost/bookingapp/';
 |
 */
 $config['index_page'] = '';
-
 /*
 |--------------------------------------------------------------------------
 | URI PROTOCOL
@@ -52,7 +51,7 @@ $config['index_page'] = '';
 |
 | WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
 */
-$config['uri_protocol']	= 'REQUEST_URI';
+$config['uri_protocol'] = "REQUEST_URI";
 
 /*
 |--------------------------------------------------------------------------
@@ -158,7 +157,7 @@ $config['composer_autoload'] = FALSE;
 | DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
 |
 */
-$config['permitted_uri_chars'] = '';
+// $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 
 /*
 |--------------------------------------------------------------------------
@@ -324,7 +323,8 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = 'mylv';
+$config['encryption_key'] = 'nmsc encrypt secret key';
+
 
 /*
 |--------------------------------------------------------------------------
