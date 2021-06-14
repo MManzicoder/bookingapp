@@ -19,6 +19,7 @@ class Welcome extends CI_Controller {
         if($this -> form_validation -> run()){
             $result = $this -> login -> can_login($this -> input -> post("username"),$this -> input ->post("password"));
             if($result == ''){
+				$this -> session -> set_flashdata("loggedIn",true);
                 redirect(base_url()."Welcome/home");
             }else {
                 $this -> session -> set_flashdata('message',$result);
@@ -53,6 +54,7 @@ class Welcome extends CI_Controller {
 				"password" =>$this->hash_password($this ->input -> post("password"))
 			);
 			$this -> signup ->insert_data($data);
+			$this -> session -> set_flashdata("loggedIn",true);
 			redirect(base_url()."Dashboard");
 		}else{
 			$this -> index();
