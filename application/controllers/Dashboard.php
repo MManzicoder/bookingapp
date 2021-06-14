@@ -28,9 +28,12 @@ class Dashboard extends CI_Controller{
     }
   }
   public function viewMore(){
-    if()
-    $hotels["hotels"] = $this->hotel_model->load_morehotels();
-    $this->load->view("dashboard", $hotels);
+    if($this -> session -> flashdata("loggedIn")){
+      $hotels["hotels"] = $this->hotel_model->load_morehotels();
+      $this->load->view("dashboard", $hotels);
+    }else{
+      redirect(base_url()."Welcome/login");
+    }
   }
   function orders(){
 
