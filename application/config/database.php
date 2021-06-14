@@ -75,10 +75,14 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
+	// 'hostname' => 'localhost',
+	// 'username' => 'root',
+	// 'password' => 'kayitare@123',
+	// 'database' => 'ci_hotel',
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => 'kayitare@123',
-	'database' => 'ci_hotel',
+	'password' => 'mysql',
+	'database' => 'test',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
