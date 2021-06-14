@@ -9,21 +9,31 @@ class Dashboard extends CI_Controller{
      $this->load->library("encryption");
    }
    function index(){
-        $this->load->model("hotel_model");
-        $hotels['hotels'] = $this->hotel_model->load_hotels();
-        $this->load->view("dashboard", $hotels);
+        if($this -> session -> flashdata("loggedIn")){
+          $this->load->model("hotel_model");
+          $hotels['hotels'] = $this->hotel_model->load_hotels();
+          $this->load->view("dashboard", $hotels);
+        }else{
+          redirect(base_url()."Welcome/login");
+        }
     }
   public function viewHotel($hId){
     // $this->load->library("encryption");
     // $hId = $this->encryption->decrypt($hId);
-    $hotel["hotel"] = $this->hotel_model->getHotel($hId);
-    $this->load->view("hotel", $hotel);
-
-    
+    if($this -> session -> flashdata("loggedIn")){
+      $hotel["hotel"] = $this->hotel_model->getHotel($hId);
+      $this->load->view("hotel", $hotel);
+    }else{
+      redirect(base_url()."Welcome/login");
+    }
   }
   public function viewMore(){
-    $hotels["hotels"] = $this->hotel_model->load_morehotels();
-    $this->load->view("dashboard", $hotels);
+    if($this -> session -> flashdata("loggedIn")){
+      $hotels["hotels"] = $this->hotel_model->load_morehotels();
+      $this->load->view("dashboard", $hotels);
+    }else{
+      redirect(base_url()."Welcome/login");
+    }
   }
   function orders(){
 

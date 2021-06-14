@@ -174,7 +174,7 @@
 </head>
 <?php
 
- $hId = $this->encryption->encrypt($hotel[0]["hId"]);
+ $hId = $hotel[0]["hId"];
 ?>
 <body>
     <div class="container_fluid d-flex">
