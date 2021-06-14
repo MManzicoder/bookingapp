@@ -42,6 +42,7 @@
 			<input type="password" name="confirmPassword" class="form-control my-4" placeholder="Confirm Password" value="<?php echo set_value('confirmPassword') ?>">
 			<span class="text-danger"><?php echo(form_error("confirmPassword")) ?></span>
 		</div>
+		<a href="<?php echo base_url() ?>Welcome/login">login instead</a>
 		<div class="submit">
 			<input type="submit" class="btn btn-primary btn-block" value="Sign up">
 		</div>

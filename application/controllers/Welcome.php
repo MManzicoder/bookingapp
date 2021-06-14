@@ -61,4 +61,7 @@ class Welcome extends CI_Controller {
 	public function book(){
 		$this -> load -> view("book");
 	}
+	public function home(){
+		redirect(base_url()."Dashboard");
+	}
 }

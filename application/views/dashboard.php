@@ -173,7 +173,7 @@ Dashboard</a></li>
                <li><a class="text-primary" href="<?=site_url("dashboard/viewmore")?>">See All</a></li>
              </ul>
              <div class="places">
-                 <?php foreach($hotels as $hotel) { $hId=$this->encryption->encrypt($hotel["hId"]);?>
+                 <?php foreach($hotels as $hotel) {$hId = $hotel["hId"]; ?>
                 <a href="<?=site_url("view/$hId")?>" class="card-hotel">
                     <img src='<?=base_url();?>images/<?=$hotel["hotel_image"]?>' alt="onomo">
                     <div class="hotel">

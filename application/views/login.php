@@ -28,10 +28,11 @@
                         <?php
                     } ?>
                 </div>
-                <a href="<?php echo base_url()?>forgot_password/form">forgot password?</a>
+                <a href="<?php echo base_url()?>forgot_password/form">forgot password?</a><br>
                 <div class="submit">
                     <input type="submit" value="login" class="btn btn-primary btn-block">
                 </div>
+                <a href="<?php echo base_url() ?>Welcome" class="btn btn-block btn-outline-success mt-3">signup instead</a>
             </form>
         </div>
     </div>
