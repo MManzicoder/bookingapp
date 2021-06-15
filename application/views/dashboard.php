@@ -151,8 +151,7 @@
            <ul class="links">
               <li class="active"><a href=""><i class="fa fa-tachometer" aria-hidden="true"></i> 
 Dashboard</a></li>
-              <li><a href=""><i class="fa fa-address-card" aria-hidden="true"></i>
- Orders</a></li>
+    <?php print_r($this->session->id) ?>
               <li><a href=""><i class="fa fa-bell" aria-hidden="true"></i> 
  Notifications</a></li>
               <li><a href=""><i class="fa fa-cog" aria-hidden="true"></i>
