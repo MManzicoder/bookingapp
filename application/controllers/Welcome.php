@@ -4,11 +4,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Welcome extends CI_Controller {
 	public function index()
 	{
-		$this->load->view('form_view');
+		if(!$this -> session -> userdata("username")){
+			$this->load->view('form_view');
+		}else{
+			redirect(base_url()."Dashboard");
+		}
 	}
 	public function login () {
 		$this->load->library('session');
-		$this -> load ->view("login");
+		if(!$this -> session -> userdata("username")){
+			$this -> load ->view("login");
+		}else{
+			redirect(base_url()."Dashboard");
+		}
 	}
 	public function validate_form(){
 		$this->load->library('session');
@@ -20,13 +28,13 @@ class Welcome extends CI_Controller {
             $result = $this -> login -> can_login($this -> input -> post("username"),$this -> input ->post("password"));
             if($result == ''){
 				$this -> session -> set_userdata("loggedIn",true);
-				$this -> session -> set_userdata("email",$this -> input -> post("email"));
+				$this -> session -> set_userdata("username",$this -> input -> post("username"));
                 redirect(base_url()."Welcome/home");
             }else {
                 $this -> session -> set_userdata('message',$result);
                 redirect(base_url()."Welcome/login");
             }
-        }else {
+        }else{
             $this -> login();
         }
     }
@@ -56,7 +64,7 @@ class Welcome extends CI_Controller {
 			);
 			$this -> signup ->insert_data($data);
 			$this -> session -> set_userdata("loggedIn",true);
-			$this -> session -> set_userdata("email",$this -> input -> post("email"));
+			$this -> session -> set_userdata("username",$this -> input -> post("username"));
 			redirect(base_url()."Dashboard");
 		}else{
 			$this -> index();
