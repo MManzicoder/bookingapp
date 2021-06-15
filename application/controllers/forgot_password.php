@@ -2,12 +2,17 @@
 class Forgot_password extends CI_Controller {
 
     public function form(){
-        $this -> load -> view("forgot");
+        if($this -> session -> userdata("loggedIn")){
+            $this -> load -> view("forgot");
+        }else{
+            redirect(base_url()."Welcome/login");
+        }
     }
 
     public function index (){
         $this -> load -> library("session");
-        $this -> load -> model("view_id");
+        if($this -> session -> userdata("loggedIn")){
+            $this -> load -> model("view_id");
         if($this -> view_id->getId($this -> input -> post("email"))){
             $userId = $this -> view_id -> getId($this -> input ->post("email"));
             // print_r($userId);
@@ -34,7 +39,7 @@ class Forgot_password extends CI_Controller {
             $this->email->subject('Email Test');
             $this->email->message("<a href='http://localhost/bookingapp/bookingapp/forgot_password/new_password/".$userId."'>change password</a>");
             if($this->email->send()){
-                $this -> session -> set_flashdata("userId",$userId);
+                $this -> session -> set_userdata("userId",$userId);
                 echo("we have emailed you!! click to the link to verify it is you");
             };
             echo $this->email->print_debugger();
@@ -78,20 +83,31 @@ class Forgot_password extends CI_Controller {
             // $this -> load -> view("forgot");
             echo("unable");
             }
+        }else{
+            redirect(base_url()."Welcome/login");
+        }
         }
             public function change_password(){
-                $this -> form_validation -> set_rules("password","password","trim|required");
-                if($this -> form_validation->run()){
-                    $this -> load -> model("change_password");
-                    $this -> change_password->reset_password($this -> input -> post("password"),$this ->session->flashdata("userId"));
-                    redirect(base_url()."Welcome/login");
+                if($this -> session -> userdata("loggedIn")){
+                    $this -> form_validation -> set_rules("password","password","trim|required");
+                    if($this -> form_validation->run()){
+                        $this -> load -> model("change_password");
+                        $this -> change_password->reset_password($this -> input -> post("password"),$this ->session->userdata("userId"));
+                        redirect(base_url()."Welcome/login");
+                    }else{
+                        $data["error"] = "password is required";
+                        $this -> load -> view("changePassword",$data);
+                    }
                 }else{
-                    $data["error"] = "password is required";
-                    $this -> load -> view("changePassword",$data);
+                    redirect(base_url()."Welcome/login");
                 }
             }
             public function new_password(){
-                $this -> load -> view("changePassword");
+                if($this -> session -> userdata("loggedIn")){
+                    $this -> load -> view("changePassword");
+                }else{
+                    redirect(base_url()."Welcome/login");
+                }
             }
         }
 ?>

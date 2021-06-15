@@ -5,7 +5,8 @@ class home extends CI_Controller{
         $this->load->view('home');
     }
     public function signup(){
-        $this -> load -> view('form_view');
+        // $this -> load -> view('form_view');
+        redirect(base_url()."Welcome");
     }
     public function bookForm(){
         $this->load->view('book');
