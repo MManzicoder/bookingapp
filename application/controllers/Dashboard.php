@@ -9,7 +9,7 @@ class Dashboard extends CI_Controller{
      $this->load->library("encryption");
    }
    function index(){
-        if($this->session->flashdata("loggedIn")){
+        if($this->session->userdata("loggedIn")){
           $this->load->model("hotel_model");
           $hotels['hotels'] = $this->hotel_model->load_hotels();
           $this->load->view("dashboard", $hotels);
@@ -34,7 +34,7 @@ class Dashboard extends CI_Controller{
     }
   }
   function orders(){
-
+ 
     }
   function notifications(){
 

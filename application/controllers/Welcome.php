@@ -19,10 +19,11 @@ class Welcome extends CI_Controller {
         if($this -> form_validation -> run()){
             $result = $this -> login -> can_login($this -> input -> post("username"),$this -> input ->post("password"));
             if($result == ''){
-				$this -> session -> set_flashdata("loggedIn",true);
+				$this -> session -> set_userdata("loggedIn",true);
+				$this -> session -> set_userdata("email",$this -> input -> post("email"));
                 redirect(base_url()."Welcome/home");
             }else {
-                $this -> session -> set_flashdata('message',$result);
+                $this -> session -> set_userdata('message',$result);
                 redirect(base_url()."Welcome/login");
             }
         }else {
@@ -54,14 +55,12 @@ class Welcome extends CI_Controller {
 				"password" =>$this->hash_password($this ->input -> post("password"))
 			);
 			$this -> signup ->insert_data($data);
-			$this -> session -> set_flashdata("loggedIn",true);
+			$this -> session -> set_userdata("loggedIn",true);
+			$this -> session -> set_userdata("email",$this -> input -> post("email"));
 			redirect(base_url()."Dashboard");
 		}else{
 			$this -> index();
 		}
-	}
-	public function book(){
-		$this -> load -> view("book");
 	}
 	public function home(){
 		redirect(base_url()."Dashboard");
