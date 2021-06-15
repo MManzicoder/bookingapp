@@ -32,7 +32,7 @@ class Forgot_password extends CI_Controller {
             $this->email->from('mmanzicder@gmail.com', 'Manzi');
             $this->email->to($to_email); 
             $this->email->subject('Email Test');
-            $this->email->message("<a href='http://localhost/bookingapp/bookingapp/forgot_password/new_password/".$userId."'>change password</a>");
+            $this->email->message("<a href='http://localhost/bookingapp/forgot_password/new_password/".$userId."'>change password</a>");
             if($this->email->send()){
                 $this -> session -> set_flashdata("userId",$userId);
                 echo("we have emailed you!! click to the link to verify it is you");

@@ -145,18 +145,13 @@
     <div class="container_fluid d-flex">
     <div class="sidebar text-white bg-primary d-flex">
            <div class="userprofile">
-<<<<<<< HEAD
-               <img src="<?=base_url();?>images/booker.jpg" alt="profile" />
-=======
                <img src="<?=base_url();?>images/booker.jpg" alt="profile">
                <!-- <h3></h3> -->
->>>>>>> 6e6f1b0b0a4460a7096eda40dbb45d4659b098ef
            </div>
            <ul class="links">
               <li class="active"><a href=""><i class="fa fa-tachometer" aria-hidden="true"></i> 
 Dashboard</a></li>
-              <li><a href=""><i class="fa fa-address-card" aria-hidden="true"></i>
- Orders</a></li>
+    <?php print_r($this->session->id) ?>
               <li><a href=""><i class="fa fa-bell" aria-hidden="true"></i> 
  Notifications</a></li>
               <li><a href=""><i class="fa fa-cog" aria-hidden="true"></i>
