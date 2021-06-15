@@ -23,11 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-<<<<<<< HEAD
-$config['base_url'] = 'http://localhost/bookingapp/';  
-=======
-$config['base_url'] = 'http://localhost/bookingapp';  
->>>>>>> 22f0b094324c2feb04e048f834a36395578328d3
+$config['base_url'] = "http://localhost/bookingapp/";  
 
 /*
 |--------------------------------------------------------------------------

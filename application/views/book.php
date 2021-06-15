@@ -284,30 +284,12 @@
     }
 </style>
 <div class="main">
-    <!-- <div class="sidebar">
-        <div class="nav">
-            <div class="profile"> 
-            <img src="<?php echo base_url() ?>/images/aguero.jpg" alt="" class="about-img">
-            <ul>
-                <li><span><i class="fas fa-home"></i></span><?php echo anchor('home', 'Home', ['class' => 'link']) ?></li>
-                <li><span><i class="fas fa-bars"></i></span><?php echo anchor('home', 'Orders', ['class' => 'link']) ?></li>
-                <li><span><i class="far fa-bell"></i></span><?php echo anchor('home', 'Notifications', ['class' => 'link']) ?></li>
-                <li><span><i class="fas fa-cog"></i></span> <?php echo anchor('home', 'settings', ['class' => 'link']) ?>
-                </li>
-            </ul> -->
-    <!-- <div class="links"><span><i class="fas fa-home"></i></span><?php echo anchor('home', 'Home', ['class' => 'link']) ?></div>
-        <div class="links"><span><i class="fas fa-bars"></i></span><?php echo anchor('home', 'Orders', ['class' => 'link']) ?></div>
-        <div class="links"><span><i class="far fa-bell"></i></span><?php echo anchor('home', 'Notifications', ['class' => 'link']) ?></div>
-        <div class="links"><span><i class="fas fa-cog"></i></span> <?php echo anchor('home', 'settings', ['class' => 'link']) ?></div> -->
-    <!-- </div>
-    </div> -->
-    <!-- <div class="main"> -->
         <div class="sidebar text-white bg-primary d-flex">
             <div class="userprofile">
                 <img src="<?= base_url(); ?>images/aguero.jpg" alt="profile">
             </div>
             <ul class="links">
-                <li class="active"><a href=""><i class="fa fa-tachometer" aria-hidden="true"></i>
+                <li class="active"><a href="<?=site_url("user/dashboard")?>"><i class="fa fa-tachometer" aria-hidden="true"></i>
                         Dashboard</a></li>
                 <li><a href=""><i class="fa fa-address-card" aria-hidden="true"></i>
                         Orders</a></li>
@@ -324,11 +306,7 @@
         <div class="form">
             <div class="container">
                 <i class="fas fa-arrow-left" id="left-icon"></i>
-<<<<<<< HEAD
-                <legend class="legend">Book your room</legend>
-=======
                 <legend class="legend">Onomo hotel Kigali</legend>
->>>>>>> 6e6f1b0b0a4460a7096eda40dbb45d4659b098ef
                 <!-- <form action=""> -->
                 <?php echo form_open('home/save') ?>
                 <div class="content">
