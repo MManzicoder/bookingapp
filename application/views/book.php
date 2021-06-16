@@ -306,7 +306,7 @@
         <div class="form">
             <div class="container">
                 <i class="fas fa-arrow-left" id="left-icon"></i>
-                <legend class="legend">Onomo hotel Kigali</legend>
+                <legend class="legend">Book your room</legend>
                 <!-- <form action=""> -->
                 <?php echo form_open('home/save') ?>
                 <div class="content">
