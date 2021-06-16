@@ -313,8 +313,13 @@
         </div>
         <div class="form">
             <div class="container">
+<<<<<<< HEAD
                 <a style="color: black;" href="<?=site_url("user/dashboard")?>"><i class="fas fa-arrow-left" id="left-icon"></i></a>
                 <legend class="legend">Onomo hotel Kigali</legend>
+=======
+                <i class="fas fa-arrow-left" id="left-icon"></i>
+                <legend class="legend">Book your room</legend>
+>>>>>>> 4baa31e76442b3a664fb4b87b66e49c801c651b5
                 <!-- <form action=""> -->
                 <?php echo form_open('home/save') ?>
                 <div class="content">

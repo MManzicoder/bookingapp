@@ -40,7 +40,6 @@ class Admin extends CI_Controller{
         }
          $this->fpdf->AliasNbPages();
          $this->fpdf->output();
- 
   }   
 
 }
