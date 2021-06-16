@@ -5,12 +5,15 @@ class home extends CI_Controller{
         $this->load->view('home');
     }
     public function signup(){
-        $this -> load -> view('form_view');
+        // $this -> load -> view('form_view');
+        redirect(base_url()."Welcome");
     }
     public function bookForm($id){
-        $this->load->model("bookModel");
-        $hl["hotel"] = $this->bookModel->getHotel($id);
-        $this->load->view('book', $hl);
+        if($this->session->user_data('loggedIn')){
+            $this->load->model("bookModel");
+            $hl["hotel"] = $this->bookModel->getHotel($id);
+            $this->load->view('book', $hl);
+        }
     }
     public function save(){
         $this->form_validation->set_rules('firstname', 'first Name', 'required');

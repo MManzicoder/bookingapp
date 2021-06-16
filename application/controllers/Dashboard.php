@@ -46,9 +46,9 @@ class Dashboard extends CI_Controller{
       $this->session->sess_destroy();
       redirect(site_url()."Welcome/login");
     }
-    public function book(){
-      $this -> load -> view("book");
-    }
+    // public function book(){
+    //   $this -> load -> view("book");
+    // }
 }
 
 ?>

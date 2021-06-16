@@ -287,12 +287,20 @@
         <div class="sidebar text-white bg-primary d-flex">
             <div class="userprofile">
                 <img src="<?= base_url(); ?>images/aguero.jpg" alt="profile">
+                
             </div>
             <ul class="links">
                 <li class="active"><a href="<?=site_url("user/dashboard")?>"><i class="fa fa-tachometer" aria-hidden="true"></i>
                         Dashboard</a></li>
-                <li><a href=""><i class="fa fa-address-card" aria-hidden="true"></i>
+                        <?php $username = $this->session->user["username"];?>
+            <?php if($username=="mmanzicd") { ?>
+
+                <li><a href="<?=site_url("user/orders/admin");?>"><i class="fa fa-address-card" aria-hidden="true"></i>
+            Orders</a></li>
+            <?php } ?>
+              <?php if($username !="mmanzicd") { ?> <li><a href=""><i class="fa fa-address-card" aria-hidden="true"></i>
                         Orders</a></li>
+                        <?php } ?>
                 <li><a href=""><i class="fa fa-bell" aria-hidden="true"></i>
                         Notifications</a></li>
                 <li><a href=""><i class="fa fa-cog" aria-hidden="true"></i>

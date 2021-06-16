@@ -2,7 +2,7 @@
 class Forgot_password extends CI_Controller {
 
     public function form(){
-        if($this -> session -> userdata("loggedIn")){
+        if(!$this -> session -> userdata("loggedIn")){
             $this -> load -> view("forgot");
         }else{
             redirect(base_url()."Welcome/login");
@@ -11,7 +11,7 @@ class Forgot_password extends CI_Controller {
 
     public function index (){
         $this -> load -> library("session");
-        if($this -> session -> userdata("loggedIn")){
+        if(!$this -> session -> userdata("loggedIn")){
             $this -> load -> model("view_id");
         if($this -> view_id->getId($this -> input -> post("email"))){
             $userId = $this -> view_id -> getId($this -> input ->post("email"));
@@ -88,7 +88,7 @@ class Forgot_password extends CI_Controller {
         }
         }
             public function change_password(){
-                if($this -> session -> userdata("loggedIn")){
+                if(!$this -> session -> userdata("loggedIn")){
                     $this -> form_validation -> set_rules("password","password","trim|required");
                     if($this -> form_validation->run()){
                         $this -> load -> model("change_password");
@@ -103,7 +103,7 @@ class Forgot_password extends CI_Controller {
                 }
             }
             public function new_password(){
-                if($this -> session -> userdata("loggedIn")){
+                if(!$this -> session -> userdata("loggedIn")){
                     $this -> load -> view("changePassword");
                 }else{
                     redirect(base_url()."Welcome/login");
