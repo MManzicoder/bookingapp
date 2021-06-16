@@ -163,7 +163,7 @@
               <li class="active"><a href=""><i class="fa fa-tachometer" aria-hidden="true"></i> 
 Dashboard</a></li>
 <?php $username = $this->session->user["username"];?>
-<?php if($username=="mmanzicd") { ?>
+<?php if($username=="higue") { ?>
 
     <li><a href="<?=site_url("user/orders/admin");?>"><i class="fa fa-address-card" aria-hidden="true"></i>
  Orders</a></li>

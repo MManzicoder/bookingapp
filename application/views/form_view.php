@@ -10,6 +10,9 @@
 		form {
 
 		}
+		.sectors {
+			display: none;
+		}
 	</style>
 </head>
 <body>
@@ -42,6 +45,29 @@
 			<input type="password" name="confirmPassword" class="form-control my-4" placeholder="Confirm Password" value="<?php echo set_value('confirmPassword') ?>">
 			<span class="text-danger"><?php echo(form_error("confirmPassword")) ?></span>
 		</div>
+		<div class="location">
+			<select name="district" id="district" class="form-control" onchange="changed(this)">
+			<option value="">Select district</option>
+			<?php
+			foreach($district -> result() as $row){
+				?>
+					<option value="<?php echo $row->districtId ?>"><?php echo $row->districtName ?></option>
+				<?php
+			}
+			?>	
+			</select>
+			<select name="sector" id="sector" class="form-control mt-2" disabled>
+				<option value="">Select sector</option>
+				<?php
+				foreach($sector -> result() as $row){
+					?>
+						<option class="sectors <?php echo $row -> districtId ?>" value="<?php echo $row->sectorId ?>"><?php echo $row->sectorName ?></option>
+					<?php
+				}
+				?>
+				
+			</select>
+		</div>
 		<a href="<?php echo base_url() ?>Welcome/login">login instead</a>
 		<div class="submit">
 			<input type="submit" class="btn btn-primary btn-block" value="Sign up">
@@ -49,5 +75,17 @@
 	</form>
 	</div>
 </div>
+<script>
+	function changed(e){
+		document.getElementById("sector").disabled = false;
+		var c = e.value;
+		var options = document.getElementsByClassName(c);
+
+		for(var i = 0; i < options.length; i++){
+			options[i].style.textTransform = "capitalize";
+			options[i].classList.remove("sectors");
+		}
+	}
+</script>
 </body>
 </html>
