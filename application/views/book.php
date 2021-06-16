@@ -307,7 +307,7 @@
                         Settings</a></li>
             </ul>
             <div class="logout">
-                <a href=""><i class="fa fa-sign-out" aria-hidden="true"></i>
+                <a href="<?=site_url("Dashboard/logout")?>"><i class="fa fa-sign-out" aria-hidden="true"></i>
                     Logout</a>
             </div>
         </div>
