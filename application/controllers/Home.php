@@ -7,8 +7,10 @@ class home extends CI_Controller{
     public function signup(){
         $this -> load -> view('form_view');
     }
-    public function bookForm(){
-        $this->load->view('book');
+    public function bookForm($id){
+        $this->load->model("bookModel");
+        $hl["hotel"] = $this->bookModel->getHotel($id);
+        $this->load->view('book', $hl);
     }
     public function save(){
         $this->form_validation->set_rules('firstname', 'first Name', 'required');

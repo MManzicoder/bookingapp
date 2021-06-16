@@ -3,4 +3,9 @@ class bookModel extends CI_Model{
     public function book($data){
         return $this->db->insert('book', $data);
     }
+    public function getHotel($id){
+        $this->db->where("hId", $id);
+        return $this->db->get("hotels")->result_array();
+    }
 }
+

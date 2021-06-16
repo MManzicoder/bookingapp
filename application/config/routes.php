@@ -58,5 +58,4 @@ $route['user/hotels'] = "Dashboard/viewMore";
 $route["view/(:any)"] = "Dashboard/viewHotel/$1";
 $route["book/(:any)"] = "Home/bookForm/$1";
 $route["user/orders/admin"] = "Admin/orders";
-$route['user/allUsers/admin']='AllU/allUsers'
-
+// $route['user/Paginated/admin']= 'Paginated/pagination';
