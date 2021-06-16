@@ -9,10 +9,12 @@ class home extends CI_Controller{
         redirect(base_url()."Welcome");
     }
     public function bookForm($id){
-        if($this->session->user_data('loggedIn')){
+        if($this->session->userdata('loggedIn')){
             $this->load->model("bookModel");
             $hl["hotel"] = $this->bookModel->getHotel($id);
             $this->load->view('book', $hl);
+        }else{
+            redirect("Welcome/login");
         }
     }
     public function save(){

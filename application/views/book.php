@@ -28,7 +28,7 @@
         line-height: 50px;
     }
 
-    a {
+    .links li a, .logout a {
         color: #fff;
         text-decoration: none;
         font-size: 16px;
@@ -153,70 +153,8 @@
 
     a {
         color: #fff;
-    }
-
-    /* body {
-        background-color: whitesmoke;
-    }
-
-    .sidebar {
-        background-color: #0151A8;
-        height: 100vh;
-        width: 210px;
-    }
-
-    .sidebar .link {
-        color: white;
-        margin-top: 50px;
         text-decoration: none;
-        margin-left: 16px;
-        font-size: 15px;
-        font-family: poppins;
     }
-
-    .nav {
-        display: flex;
-        flex-direction: column;
-    }
-
-    ul li {
-        list-style: none;
-        height: 42px;
-        margin-left: 5px;
-    }
-
-    .profile {
-        border-radius: 50%;
-        background-color: white;
-        height: 80px;
-        width: 80px;
-        background-color: rgb(55, 55, 243);
-    }
-    .sidebar img {
-        height: 80px;
-        width: 80px;
-        border: 50%;
-        border-radius: 50%;
-        margin-left: 30px;
-        margin-top: 40px;
-        margin-bottom: 30px;
-    }
-
-    .sidebar span {
-        font-size: 14px;
-        color: white;
-        display: inline;
-        margin-left: 5px;
-    }
-
-    ul {
-        margin-left: -20px;
-    }
-
-    .sidebar li:hover {
-        background-color: #1A61B3;
-    } */
-
     legend {
         margin-left: 10px;
         font-weight: bolder;
@@ -243,7 +181,7 @@
     input [type='radio'] {
         font-size: 10px;
         display: inline;
-    }
+}
 
     select {
         font-size: 16px;
@@ -314,8 +252,8 @@
         <div class="form">
             <div class="container">
                 <i class="fas fa-arrow-left" id="left-icon"></i>
+                <!-- <?php print_r($hotel);   ?> -->
                 <legend class="legend"><?=$hotel[0]["name"];?></legend>
-                <!-- <form action=""> -->
                 <?php echo form_open('home/save') ?>
                 <div class="content">
                     <label for="work">Are you travelling for work</label>
