@@ -8,13 +8,12 @@ class home extends CI_Controller{
         // $this -> load -> view('form_view');
         redirect(base_url()."Welcome");
     }
-    public function bookForm(){
-        if($this -> session -> userdata("loggedIn")){
-            $this->load->view('book');
-        }else{
-            redirect(base_url()."Welcome/login");
+    public function bookForm($id){
+        if($this->session->user_data('loggedIn')){
+            $this->load->model("bookModel");
+            $hl["hotel"] = $this->bookModel->getHotel($id);
+            $this->load->view('book', $hl);
         }
-        
     }
     public function save(){
         $this->form_validation->set_rules('firstname', 'first Name', 'required');

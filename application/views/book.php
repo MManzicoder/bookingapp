@@ -313,8 +313,8 @@
         </div>
         <div class="form">
             <div class="container">
-                <a style="color: black;" href="<?=site_url("user/dashboard")?>"><i class="fas fa-arrow-left" id="left-icon"></i></a>
-                <legend class="legend">Onomo hotel Kigali</legend>
+                <i class="fas fa-arrow-left" id="left-icon"></i>
+                <legend class="legend"><?=$hotel[0]["name"];?></legend>
                 <!-- <form action=""> -->
                 <?php echo form_open('home/save') ?>
                 <div class="content">

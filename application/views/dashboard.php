@@ -168,7 +168,7 @@ Dashboard</a></li>
     <li><a href="<?=site_url("user/orders/admin");?>"><i class="fa fa-address-card" aria-hidden="true"></i>
  Orders</a></li>
  
-    <li><a href="<?=site_url("user/allUsers/admin");?>"><i class="fa fa-address-card" aria-hidden="true"></i>
+    <li><a href="<?=site_url("Admin");?>"><i class="fa fa-address-card" aria-hidden="true"></i>
  allUsers</a></li>
  <?php } ?>
               <li><a href=""><i class="fa fa-bell" aria-hidden="true"></i> 
