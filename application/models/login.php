@@ -7,7 +7,12 @@ class Login extends CI_model {
             foreach($query -> result() as $row){
                 $store_password = $row -> password;
                 if(password_verify($password,$store_password)){
-                    $this ->session ->set_userdata('id',$row ->id);
+                    $userdata = [
+                        "id"=>$row->id,
+                        "username"=>$row->username,
+                        "email"=>$row->email
+                    ];
+                    $this ->session ->set_userdata('user',$userdata);
                 }else{
                     return 'wrong password';
                 }

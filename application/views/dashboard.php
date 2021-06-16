@@ -19,7 +19,8 @@
            width: 15%;
            height: 100%;
            flex-direction: column;
-       }
+           position: fixed;
+                  }
        .links{
            width: 100%;
            list-style: none;
@@ -45,6 +46,7 @@
            height: 20vh;
            margin: 20px;
            margin-left: 60px;
+           position: relative;
        }
        .userprofile>img{
            height: 60px;
@@ -64,18 +66,20 @@
        .dash{
            background: #ffffff;
            width: 85%;
+           margin-left: 15%;
            height: 100%;
        }
        .search{
            width: 93%;
            margin: 0 auto;
            /* border: 1px groove; */
-           height: 8em;
+           height: 4em;
        }
        .popularplaces{
            width: 73%;
-           height: 69vh;
+           height: 72vh;
            margin-left: 41px;
+          
            /* border: 1px groove; */
        }
        .popular{
@@ -94,6 +98,7 @@
        }
        .places{
            display: flex;
+           flex-wrap: wrap;
 
        }
        .card-hotel{
@@ -139,6 +144,12 @@
        a{
            color: #fff;
        }
+       .userprofile h3{
+           position: absolute;
+           text-align: left;
+           left: -20px;
+           font-size: 20px;
+       }
     </style>
 </head>
 <body>
@@ -146,19 +157,24 @@
     <div class="sidebar text-white bg-primary d-flex">
            <div class="userprofile">
                <img src="<?=base_url();?>images/booker.jpg" alt="profile">
-               <!-- <h3></h3> -->
+               <h3><?=$this->session->user["username"];?></h3>
            </div>
            <ul class="links">
               <li class="active"><a href=""><i class="fa fa-tachometer" aria-hidden="true"></i> 
 Dashboard</a></li>
-    <?php print_r($this->session->id) ?>
+<?php $username = $this->session->user["username"];?>
+<?php if($username=="mmanzicd") { ?>
+
+    <li><a href="<?=site_url("user/orders/admin");?>"><i class="fa fa-address-card" aria-hidden="true"></i>
+ Orders</a></li>
+ <?php } ?>
               <li><a href=""><i class="fa fa-bell" aria-hidden="true"></i> 
  Notifications</a></li>
               <li><a href=""><i class="fa fa-cog" aria-hidden="true"></i>
  Settings</a></li>
            </ul>
            <div class="logout">
-          <a href=""><i class="fa fa-sign-out" aria-hidden="true"></i>
+          <a href="<?=site_url("Dashboard/logout")?>"><i class="fa fa-sign-out" aria-hidden="true"></i>
  Logout</a>
         </div>
 
@@ -169,18 +185,21 @@ Dashboard</a></li>
              <ul class="popular">
                <li>Popular places</li>
                <!-- <li><?=anchor("user/hotels", "See All", "class='text-primary'")?></li> -->
-               <li><a class="text-primary" href="<?=site_url("dashboard/viewmore")?>">See All</a></li>
+              <?php if(count($hotels)<=3) { ?><li><a class="text-primary" href="<?=site_url("dashboard/viewmore")?>">See All</a></li><?php } ?>
              </ul>
              <div class="places">
-                 <?php foreach($hotels as $hotel) {$hId = $hotel["hId"]; ?>
-                <a href="<?=site_url("view/$hId")?>" class="card-hotel">
-                    <img src='<?=base_url();?>images/<?=$hotel["hotel_image"]?>' alt="onomo">
+                 <?php foreach($hotels as $hotel) { $hId = $hotel["hId"]; ?>
+                <a href="<?=site_url("view/$hId")?>" class="card-hotel m-3">
+                    <?php if($hotel["hotel_image"]) { ?><img src='<?=base_url();?>images/<?=$hotel["hotel_image"]?>' alt="onomo"><?php } ?>
                     <div class="hotel">
                        <h5><?=$hotel["name"]?></h5>
                        <p><i class="fa fa-map-marker" aria-hidden="true"></i><?=$hotel["description"]?></p>
                     </div>
                  </a>
                <?php } ?>
+
+              
+
              </div>
              <div class="favorite">
               <h5>Favorite in Rwanda</h5>

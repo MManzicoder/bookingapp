@@ -18,7 +18,7 @@ class Dashboard extends CI_Controller{
         }
     }
   public function viewHotel($hId){
-    if(!$this->session->flashdata("loggedIn")){
+    if($this->session->userdata("loggedIn")){
       $hotel["hotel"] = $this->hotel_model->getHotel($hId);
       $this->load->view("hotel", $hotel);
     }else{
@@ -26,7 +26,7 @@ class Dashboard extends CI_Controller{
     }
   }
   public function viewMore(){
-    if($this -> session -> flashdata("loggedIn")){
+    if($this -> session -> userdata("loggedIn")){
       $hotels["hotels"] = $this->hotel_model->load_morehotels();
       $this->load->view("dashboard", $hotels);
     }else{
@@ -44,7 +44,7 @@ class Dashboard extends CI_Controller{
     }
     public function logout(){
       $this->session->sess_destroy();
-      redirect("default_controller");
+      redirect(site_url()."Welcome/login");
     }
     public function book(){
       $this -> load -> view("book");
