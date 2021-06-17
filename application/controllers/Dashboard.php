@@ -34,13 +34,10 @@ class Dashboard extends CI_Controller{
     }
   }
   function orders(){
- 
     }
   function notifications(){
-
     }
     function settings(){
-        
     }
     public function logout(){
       $this->session->sess_destroy();

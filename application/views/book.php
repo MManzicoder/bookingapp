@@ -9,6 +9,7 @@
         width: 100%;
         height: 100vh;
     }
+
     .sidebar {
         width: 15%;
         height: 100%;
@@ -22,6 +23,7 @@
         padding: 0%;
         color: white !important;
     }
+
     .links>li {
         padding: 0 15px;
         width: 100%;
@@ -154,6 +156,7 @@
     a {
         color: #fff;
     }
+
     legend {
         margin-left: 10px;
         font-weight: bolder;
@@ -210,56 +213,59 @@
         margin-right: 7px;
         margin-top: 5px;
     }
-    .main{
+
+    .main {
         height: 100vh;
     }
-    .form{
+
+    .form {
         margin-left: 15%;
     }
-    .btn{
+
+    .btn {
         margin: 3px;
     }
 </style>
 <div class="main">
-        <div class="sidebar text-white bg-primary d-flex">
-            <div class="userprofile">
-                <img src="<?= base_url(); ?>images/aguero.jpg" alt="profile">
-                
-            </div>
-            <ul class="links">
-                <li class="active"><a href="<?=site_url("user/dashboard")?>"><i class="fa fa-tachometer" aria-hidden="true"></i>
-                        Dashboard</a></li>
-                        <?php $username = $this->session->user["username"];?>
-            <?php if($username=="mmanzicd") { ?>
+<?php print_r($data) ?>
+    <div class="sidebar text-white bg-primary d-flex">
+        <div class="userprofile">
+            <img src="<?= base_url(); ?>images/aguero.jpg" alt="profile">
 
-                <li><a href="<?=site_url("user/orders/admin");?>"><i class="fa fa-address-card" aria-hidden="true"></i>
-            Orders</a></li>
-            <?php } ?>
-              <?php if($username !="mmanzicd") { ?> <li><a href=""><i class="fa fa-address-card" aria-hidden="true"></i>
-                        Orders</a></li>
-                        <?php } ?>
-                <li><a href=""><i class="fa fa-bell" aria-hidden="true"></i>
-                        Notifications</a></li>
-                <li><a href=""><i class="fa fa-cog" aria-hidden="true"></i>
-                        Settings</a></li>
-            </ul>
-            <div class="logout">
-                <a href=""><i class="fa fa-sign-out" aria-hidden="true"></i>
-                    Logout</a>
-            </div>
         </div>
-        <div class="form">
+        <ul class="links">
+            <li class="active"><a href="<?= site_url("user/dashboard") ?>"><i class="fa fa-tachometer" aria-hidden="true"></i>
+                    Dashboard</a></li>
+            <?php $username = $this->session->user["username"]; ?>
+            <?php if ($username == "mmanzicd") { ?>
+
+                <li><a href="<?= site_url("user/orders/admin"); ?>"><i class="fa fa-address-card" aria-hidden="true"></i>
+                        Orders</a></li>
+            <?php } ?>
+            <?php if ($username != "mmanzicd") { ?> <li><a href=""><i class="fa fa-address-card" aria-hidden="true"></i>
+                        Orders</a></li>
+            <?php } ?>
+            <li><a href=""><i class="fa fa-bell" aria-hidden="true"></i>
+                    Notifications</a></li>
+            <li><a href=""><i class="fa fa-cog" aria-hidden="true"></i>
+                    Settings</a></li>
+        </ul>
+        <div class="logout">
+            <a href=""><i class="fa fa-sign-out" aria-hidden="true"></i>
+                Logout</a>
+        </div>
+    </div>
+    <!-- <div class="form">
             <div class="container">
                 <i class="fas fa-arrow-left" id="left-icon"></i>
-                <legend class="legend"><?=$hotel[0]["name"];?></legend>
-                <!-- <form action=""> -->
+                <legend class="legend"><?= $hotel[0]["name"]; ?></legend>
+
                 <?php echo form_open('home/save') ?>
                 <div class="content">
                     <label for="work">Are you travelling for work</label>
                     <?php echo form_radio(['name' => 'work'], 'yes', 'false') ?>Yes
                     <?php echo form_radio(['name' => 'work'], 'no', 'false') ?>No
-                    <!-- <input type="radio" name="work" value="yes">yes
-            <input type="radio" name="work" value="no">no -->
+
                     <div class='col-lg-6'>
                         <?php echo form_error('work'); ?>
                     </div>
@@ -312,7 +318,7 @@
                     ]
                     ?>
 
-                    <!-- <select name="room" id="room"> -->
+
                     <?php echo form_dropdown(['name' => 'room', 'class' => 'form-select'], $options) ?>
                     <div class='col-lg-6'>
                         <?php echo form_error('room'); ?>
@@ -326,6 +332,101 @@
                 <?php echo form_submit(['value' => 'Book', 'class' => 'btn btn-primary col-lg-5']) ?>
                 <?php echo form_close() ?>
             </div>
-        </div>
-    <!-- </div> -->
+        </div> -->
+    <style>
+        .form {
+            margin-top: 10px;
+            margin-left: 16%;
+            background-color: white;
+            width: 50%;
+            border-radius: 0px 2px 0px;
+            /* height: 80vh; */
+            box-shadow: 5px 5px 2px gray;
+        }
+
+        .input {
+            /* display: flex;
+            flex-direction: column; */
+            margin-bottom: 20px;
+        }
+
+        .input span {
+            font-size: 15px;
+            font-family: poppins;
+            margin-right: 10px;
+            margin-left: 2px;
+        }
+
+        .input label {
+            font-size: 15px;
+            font-family: poppins;
+            opacity: 0.7;
+            font-weight: lighter;
+            color: black;
+            display: block;
+        }
+
+        .input input[type=date],
+        input[type=number],
+        select {
+            height: 40px;
+            width: 66%;
+            font-size: 14px;
+            font-family: poppins;
+        }
+
+        textarea {
+            /* width: auto; */
+            width: 66%;
+        }
+
+        /* .image {} */
+
+        img {
+            margin-top: 10px;
+            margin-left: 10px;
+            width: 520px;
+            height: 660px;
+        }
+    </style>
+    <div class='form'>
+        <!-- <legend><?= $hotel[0]["name"]; ?></legend> -->
+        <form action="" class='form-group'>
+            <div class='input'>
+                <label for="checkin">Checkin date</label>
+                <input type="date" name="checkin" value="<?php set_value('checkin') ?>">
+            </div>
+            <div class='input'>
+                <label for="checkin">Checkout Date</label>
+                <input type="date" name="checkout" value="<?php set_value('checkin') ?>">
+            </div>
+            <div class='input'>
+                <label for="guests">Number of guests</label>
+                <input type="number" name="guests" value="<?php set_value('guests') ?>">
+            </div>
+            <div class='input'>
+                <label for="room">Room</label>
+                <select name="room" id="room">
+                    <?php
+                    ?>
+                    <option value="">
+                    </option>
+                </select>
+            </div>
+            <div class='input'>
+                <label for="pickup">Free PickUp?</label>
+                <input type="radio" name="pickup" id="pick" value="<?php set_value('pickup') ?>"><span>Yes</span>
+                <input type="radio" name="pickup" id="pick" value="<?php set_value('pickup') ?>"><span>No</span>
+            </div>
+            <div class='input'>
+                <label for="special">special service</label>
+                <input type="text" name="special" value="<?php set_value('special') ?>" style="height: 80px;">
+            </div>
+            <button class='btn btn-danger col-lg-3'>Book</button>
+        </form>
+    </div>
+    <div class='image'>
+        <img src="<?= base_url(); ?>images/svg.jpg" alt="svg">
+    </div>
+</div>
 </div>

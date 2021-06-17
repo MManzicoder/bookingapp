@@ -17,10 +17,8 @@ class Forgot_password extends CI_Controller {
             $userId = $this -> view_id -> getId($this -> input ->post("email"));
             // print_r($userId);
             $userId = $userId[0]["id"];
-            
             $to_email = $this->input->post('email');
             $this->load->library('email');
-
             $config['protocol']    = 'smtp';
             $config['smtp_host']    = 'ssl://smtp.gmail.com';
             $config['smtp_port']    = '465';
