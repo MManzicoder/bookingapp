@@ -28,7 +28,7 @@
         line-height: 50px;
     }
 
-    a {
+    .links li a, .logout a {
         color: #fff;
         text-decoration: none;
         font-size: 16px;
@@ -153,6 +153,8 @@
 
     a {
         color: #fff;
+
+        text-decoration: none;
     }
     legend {
         margin-left: 10px;
@@ -180,7 +182,7 @@
     input [type='radio'] {
         font-size: 10px;
         display: inline;
-    }
+}
 
     select {
         font-size: 16px;
@@ -244,15 +246,15 @@
                         Settings</a></li>
             </ul>
             <div class="logout">
-                <a href=""><i class="fa fa-sign-out" aria-hidden="true"></i>
+                <a href="<?=site_url("Dashboard/logout")?>"><i class="fa fa-sign-out" aria-hidden="true"></i>
                     Logout</a>
             </div>
         </div>
         <div class="form">
             <div class="container">
                 <i class="fas fa-arrow-left" id="left-icon"></i>
+                <!-- <?php print_r($hotel);   ?> -->
                 <legend class="legend"><?=$hotel[0]["name"];?></legend>
-                <!-- <form action=""> -->
                 <?php echo form_open('home/save') ?>
                 <div class="content">
                     <label for="work">Are you travelling for work</label>
