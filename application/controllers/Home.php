@@ -54,8 +54,9 @@ class home extends CI_Controller{
                 "guests"=> $this->input->post("guests")
             );
             if ($this->bookModel->book($data)) {
-                $this->session->set_flashdata('response', 'You have succesfully booked your room');
-                return redirect('home/bookForm/'.$hId);
+                $config['sess_expiration'] = 7200;
+                // $this->session->set_flashdata('response', 'You have succesfully booked your room');
+                return redirect('user/dashboard');
             } else {
                 $this->session->set_flashdata('response', 'records failed to save');
                 return redirect('book');
