@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 class home extends CI_Controller{
     public function index(){
-        $this->load->view('home');
+        $this->load->view('another');
     }
     public function signup(){
         // $this -> load -> view('form_view');

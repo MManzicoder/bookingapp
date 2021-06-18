@@ -15,6 +15,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Kameron:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css" />
+    <!-- Fonts-style -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/styles.css" />
+    <!-- Fonts-style -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/font-awesome.min.css" />
+    <!-- Modal-Effect -->
+    <link href="<?php echo base_url(); ?>css/component.css" rel="stylesheet">
+    <!-- owl-carousel -->
+    <link href="<?php echo base_url(); ?>css/owl.carousel.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="<?php echo base_url(); ?>css/owl.theme.css" rel="stylesheet" type="text/css" media="screen">
+    <!-- Template Styles-->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" />
+    <!-- Template Color-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/green.css" media="screen" id="color-opt" />
 </head>
 
 <body>
