@@ -44,7 +44,7 @@
         <div>
           <h1 class="intro-title">Book your Hotel</h1>
           <p class="intro-text">there is easy checkout and checkin. you can book your hotel where you are and every time</p>
-          <a class="btn btn-custom" href="#">Get started</a>
+          <a class="btn btn-custom" href=" <?= site_url('Welcome') ?>">Get started</a>
         </div>
         <!--slide item like paragraph-->
       </div>

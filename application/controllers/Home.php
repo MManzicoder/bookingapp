@@ -40,10 +40,9 @@ class home extends CI_Controller{
         $this->form_validation->set_error_delimiters('<div class="text-danger">','</div>');
         if ($this->form_validation->run()) {
             $this->load->model('bookModel');
-            $data=$this->input->post();
+            // $data=$this->input->post();
             $id = $this->session->userdata['user']['id'];
             $hId = $this->session->userdata("hId");
-            print_r($data);
             $data = array(
                 "roomId"=>$this->input->post("roomId"),
                 "userId"=>$id,
