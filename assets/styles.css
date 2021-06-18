@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container2{
+    background: linear-gradient(#26262635, #3535355f),url(../images/hotels.jpg);
+    height: 580px;
+}
+.container2{
+    padding-top: 10%;
+}
+.reduce{
+    width: 100px;
+}
+.contain{
+    background: url(../images/woman.jpg);
+    height: 300px;
+    width: 500px;
+    margin: 10%;
+}
+.text{
+    margin-top: 9%;
+}
+.line{
+    background: teal;
+    height: 2px;
+    width: 60px;
+    position: absolute;
+}
+.first{
+    height: 400px;
+    width: 400px;
+}
+.image1{
+    background-image: url(../images/duplex.jpg);
+    background-repeat: no-repeat;
+    height: 400px;
+    margin-left: 60px;
+    width: 370px;
+}
+.cap{
+    width: 250px;
+    height: 100px;
+    background-color: rgba(176, 224, 230, 0.755);
+    position: absolute;
+    top: 275%;
+    left: 80px;
+}
+.cap h6{
+    font-weight: bold;
+    padding-top: 40px;
+}
+.cap1 h6{
+    font-weight: bold;
+    padding-top: 40px;
+}
+.cap2 h6{
+    font-weight: bold;
+    padding-top: 40px;
+}
+.image2{
+    background-image: url(../images/classic.jpg);
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 370px;
+}
+.cap1{
+    width: 250px;
+    height: 100px;
+    background-color: rgba(176, 224, 230, 0.755);
+    position: absolute;
+    top: 275%;
+    left: 500px;
+}
+.image3{
+    background-image: url(../images/double.jpg);
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 370px;
+}
+.cap2{
+    width: 250px;
+    height: 100px;
+    background-color: rgba(176, 224, 230, 0.755);
+    position: absolute;
+    top: 275%;
+    left: 970px;
+}
