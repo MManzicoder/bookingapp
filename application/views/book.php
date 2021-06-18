@@ -30,7 +30,8 @@
         line-height: 50px;
     }
 
-    a {
+    .links li a,
+    .logout a {
         color: #fff;
         text-decoration: none;
         font-size: 16px;
@@ -155,6 +156,8 @@
 
     a {
         color: #fff;
+
+        text-decoration: none;
     }
 
     legend {
@@ -227,7 +230,7 @@
     }
 </style>
 <div class="main">
-<?php print_r($data) ?>
+    <!-- <?php print_r($data) ?> -->
     <div class="sidebar text-white bg-primary d-flex">
         <div class="userprofile">
             <img src="<?= base_url(); ?>images/aguero.jpg" alt="profile">
@@ -251,9 +254,10 @@
                     Settings</a></li>
         </ul>
         <div class="logout">
-            <a href=""><i class="fa fa-sign-out" aria-hidden="true"></i>
+            <a href="<?= site_url("Dashboard/logout") ?>"><i class="fa fa-sign-out" aria-hidden="true"></i>
                 Logout</a>
         </div>
+        <!-- </div> -->
     </div>
     <!-- <div class="form">
             <div class="container">
@@ -390,43 +394,44 @@
         }
     </style>
     <div class='form'>
-        <!-- <legend><?= $hotel[0]["name"]; ?></legend> -->
-        <form action="" class='form-group'>
+        <!-- <?php echo ($this->session->userdata['user']['id']) ?> -->
+        <legend><?= $data["hotel"][0]["name"]; ?></legend>
+        <!-- <?php print_r($data);?> -->
+        <form action="<?php echo site_url() ?>home/save" class='form-group' method="POST">
             <div class='input'>
                 <label for="checkin">Checkin date</label>
-                <input type="date" name="checkin" value="<?php set_value('checkin') ?>">
+                <input type="date" name="checkin" value="<?php set_value('checkin') ?>"><span><?php echo form_error('checkin'); ?></span>
             </div>
             <div class='input'>
                 <label for="checkin">Checkout Date</label>
-                <input type="date" name="checkout" value="<?php set_value('checkin') ?>">
+                <input type="date" name="checkout" value="<?php set_value('checkout') ?>"><?php echo form_error('checkout'); ?>
             </div>
             <div class='input'>
                 <label for="guests">Number of guests</label>
-                <input type="number" name="guests" value="<?php set_value('guests') ?>">
+                <input type="number" name="guests" value="<?php set_value('guests') ?>"><?php echo form_error('guests'); ?>
             </div>
             <div class='input'>
                 <label for="room">Room</label>
-                <select name="room" id="room">
-                    <?php
-                    ?>
-                    <option value="">
-                    </option>
+                <select name="roomId" id="room">
+                  <?php foreach ($data["model"] as $room) { ?>
+                  <option value="<?=$room["roomId"]?>"><?=$room["roomName"]?></option>
+                  <?php } ?>
                 </select>
             </div>
             <div class='input'>
                 <label for="pickup">Free PickUp?</label>
-                <input type="radio" name="pickup" id="pick" value="<?php set_value('pickup') ?>"><span>Yes</span>
-                <input type="radio" name="pickup" id="pick" value="<?php set_value('pickup') ?>"><span>No</span>
+                <input type="radio" name="pickup" id="pick" value="yes"><span>Yes</span><?php echo form_error('pickup'); ?>
+                <input type="radio" name="pickup" id="pick" value="no">No
             </div>
             <div class='input'>
                 <label for="special">special service</label>
-                <input type="text" name="special" value="<?php set_value('special') ?>" style="height: 80px;">
+                <input type="text" name="special_request" value="<?php set_value('special_request') ?>" style="height: 95px; width: 66%;;"><?php echo form_error('special'); ?>
             </div>
             <button class='btn btn-danger col-lg-3'>Book</button>
         </form>
     </div>
     <div class='image'>
-        <img src="<?= base_url(); ?>images/svg.jpg" alt="svg">
+        <img src="<?= base_url(); ?>images/svg.jpg" alt="profile">
     </div>
 </div>
 </div>
