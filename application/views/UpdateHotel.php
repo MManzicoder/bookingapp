@@ -46,10 +46,10 @@ defined('BASEPATH;');
     $i=1;
     foreach ($data as $row) {
     ?>
-    <div class="mb-3">
+    <!-- <div class="mb-3">
     <label for="id" class="form-label">Hotel Id:</label>
     <input type="text" name="hId" id="id" class="form-control" value="<?=$row->hId?>" readonly>
-    </div>
+    </div> -->
     <div class="mb-3">
     <label for="name" class="form-label">Hotel Name:</label>
     <input type="text" class="form-control" name="name" value="<?=$row->name?>">
