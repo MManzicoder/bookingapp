@@ -172,11 +172,10 @@
             <h3><?= $this->session->user["username"]; ?></h3>
         </div>
         <ul class="links">
-            <li><a href=""><i class="fa fa-tachometer" aria-hidden="true"></i>
+            <li><a href="<?=site_url("user/dashboard")?>"><i class="fa fa-tachometer" aria-hidden="true"></i>
                     Dashboard</a></li>
             <?php $username = $this->session->user["username"]; ?>
-            <?php if ($username == "kayitaredax") { ?>
-
+            <?php if ($username == "Mmanzicd") { ?>
                 <li><a href="<?= site_url("user/orders/admin"); ?>"><i class="fa fa-address-card" aria-hidden="true"></i>
                         Orders</a></li>
 

@@ -71,7 +71,7 @@ class Admin extends CI_Controller{
         $config = array();
         $config["base_url"] = "http://localhost/bookingapp/Admin/Pagination";
         $config["total_rows"] = $this->paginatedModel->count_all();
-        $config["per_page"] = 1;
+        $config["per_page"] = 3;
         $config["uri_segment"] = 3;
         $config["use_page_numbers"] = TRUE;
         $config["full_tag_open"] = '<ul class="pagination">';

@@ -7,13 +7,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-        form {
-        }
+    body{
+			background-image: url("<?=base_url()?>images/hotel.jpg");
+			background-position: center;
+			background-size: cover;
+		}
     </style>
 </head>
 <body>
-<div class="container pt-5">
-<div class="w-50 m-auto border rounded border-dark p-5">
+<div class="container pt-2 ">
+<div class="w-50 m-auto p-5 bg-white">
     <form action="<?php echo(base_url())?>Welcome/validateform" class="form px-5" method="POST">
         <h2 class="text-center">Welcome Home !</h2> 
         <p class="text-center">Create Account</p>
@@ -70,7 +73,9 @@
     </form>
     </div>
     </div>
-</div>
+	</div>
+	
+  <?php include("footer.php")  ?>
 <script>
     function changed(e){
         document.getElementById("sector").disabled = false;

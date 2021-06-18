@@ -9,23 +9,21 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Document</title>
+    <title>E-hotel</title>
 </head>
 <body>
         <div class="container_fluid d-flex">
             <div class="sidebar text-white bg-primary d-flex position-fixed">
                 <div class="userprofile">
                     <img src="<?=base_url();?>images/booker.jpg" alt="profile">
+                    <h3 style="position: absolute; left: 25px;"><?=$this->session->user["username"];?></h3>
                 </div>
                 <ul class="links text-light">
                     <li class="active"><a href="<?=site_url("user/dashboard")?>" class="text-decoration-none text-light"><i class="fa fa-tachometer" aria-hidden="true"></i> 
         Dashboard</a></li>
-                    <li><a href="<?=site_url("user/dashboard")?>" class="text-decoration-none text-light"><i class="fa fa-address-card" aria-hidden="true"></i>
-        Orders</a></li>
+
                     <li><a href="#" class="text-decoration-none text-light"><i class="fa fa-bell" aria-hidden="true"></i> 
         Notifications</a></li>
-        <li><a href="<?=site_url("admin/viewhotels")?>" class="text-decoration-none text-light"><i class="fa fa-bed" aria-hidden="true"></i>
-        Hotels</a></li>
                     <li><a href="" class="text-decoration-none text-light"><i class="fa fa-cog" aria-hidden="true"></i>
         Settings</a></li>
                 </ul>
