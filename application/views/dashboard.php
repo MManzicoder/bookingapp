@@ -165,8 +165,9 @@ Dashboard</a></li>
 <?php $username = $this->session->user["username"];?>
 <?php if($username=="mmanzicd") { ?>
 
-    <li><a href="<?=site_url("user/orders/admin");?>"><i class="fa fa-address-card" aria-hidden="true"></i>
- Orders</a></li>
+    <li><a href="<?=site_url("user/orders/admin");?>"><i class="fa fa-address-card" aria-hidden="true"></i>Orders</a>
+    <li><a href="<?=site_url("admin/viewhotels");?>"><i class="fa fa-address-card" aria-hidden="true"></i>
+ Hotels</a></li>
  
     <li><a href="<?=site_url("Admin");?>"><i class="fa fa-user" aria-hidden="true"></i>
  allUsers</a></li>
